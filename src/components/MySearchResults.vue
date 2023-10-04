@@ -6,14 +6,18 @@ const props = defineProps<{
   title: string;
   movies: Movie[];
 }>();
-
 </script>
 
 <template>
   <section class="common-section">
-    <h2 class="section-title">{{ props.title }}</h2>
+    <h2 class="section-title" data-testid="movie-title">{{ props.title }}</h2>
     <ul class="common-list" v-if="props.movies.length > 0">
-      <li v-for="movie in props.movies" :key="movie.id" class="common-list-item">
+      <li
+        v-for="movie in props.movies"
+        :key="movie.id"
+        class="common-list-item"
+        data-testid="movie-item"
+      >
         <figure class="figure-item">
           <RouterLink class="figure-link" :to="`/movie/${movie.id}`">
             <img
