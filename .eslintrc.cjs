@@ -1,5 +1,5 @@
 /* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution')
+require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
   root: true,
@@ -21,5 +21,14 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest'
-  }
-}
+  },
+  rules: {
+    // sort them alphabetically please
+    'arrow-body-style': ['error', 'always'],
+    'class-methods-use-this': 'off',
+    'import/prefer-default-export': [0],
+    'max-len': ['error', { code: 140 }],
+    'no-underscore-dangle': [0],
+    "semi": [2, "always"],
+  },
+};
