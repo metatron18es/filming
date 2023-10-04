@@ -19,19 +19,25 @@ onMounted(async () => {
 </script>
 
 <template>
-  <h2 class="movie-title" data-testid="movie-title">{{ movie.title }}</h2>
-  <section class="movie-info">
-    <img :src="useUtils().parseImgUrl(movie.poster_path)" :alt="movie.title" class="movie-img">
-    <ul class="movie-data-list">
-      <li class=movie-data>
-        <span class="data-title">Resumen</span>
-        <span class="data-info">{{ movie.overview }}</span>
-      </li>
-      <li class=movie-data>
-        <span class="data-title">Fecha de estreno</span>
-        <span class="data-info">{{ movie.release_date }}</span>
-      </li>
-    </ul>
+  <template v-if="movie.title">
+    <h2 class="movie-title" data-testid="movie-title">{{ movie.title }}</h2>
+    <section class="movie-info">
+      <img :src="useUtils().parseImgUrl(movie.poster_path)" :alt="movie.title" class="movie-img">
+      <ul class="movie-data-list">
+        <li class=movie-data>
+          <span class="data-title">Resumen</span>
+          <span class="data-info">{{ movie.overview }}</span>
+        </li>
+        <li class=movie-data>
+          <span class="data-title">Fecha de estreno</span>
+          <span class="data-info">{{ movie.release_date }}</span>
+        </li>
+      </ul>
+    </section>
+  </template>
+  <section v-else class="error">
+    <p class="error-title">Ha habido un error en la busqueda</p>
+    <p class="error-info">Inténtalo de nuevo</p>
   </section>
 </template>
 
@@ -73,6 +79,33 @@ onMounted(async () => {
 }
 .data-title {
   border-bottom: 1px solid white;
+  font-size: 1.2rem;
+}
+.error {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  width: fit-content;
+  margin: 0 auto;
+  border: 1px solid var(--red);
+  border-radius: var(--radius);
+  font-size: 1.2rem;
+  text-align: center;
+}
+@media screen and (max-width: 400px) {
+  .error {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+.error-title {
+  font-size: 1.5rem;
+  color: var(--red);
+}
+.error-info {
   font-size: 1.2rem;
 }
 </style>

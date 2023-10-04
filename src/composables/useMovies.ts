@@ -22,7 +22,7 @@ export function useMovies(): UseMovies {
     }
   };
 
-  const moviesFetch = async (url: string) => {
+  const moviesFetch = async (url: string, errorString: string = '') => {
     useLoadingStore().setShowLoading(true);
     const results = await fetch(url, options)
       .then((response) => { return response.json(); })
@@ -31,28 +31,29 @@ export function useMovies(): UseMovies {
         return json;
       })
       .catch((error) => {
-        console.log(error);
+        useLoadingStore().setShowLoading(false);
+        console.error('Error!!!', errorString, error);
       });
     return results;
   };
 
   const searchMovies = async (query: string) => {
     const url = `${apiSearchUrl}?query=${query}&include_adult=false&language=${language}&page=1`;
-    const jsonRes = await moviesFetch(url);
-    return jsonRes.results as Movie[];
+    const jsonRes = await moviesFetch(url, 'Search error');
+    return jsonRes ? jsonRes.results as Movie[] : [];
   };
 
   const topRatedMovies = async (length: number = 6) => {
     const url = `${apiDetailUrl}top_rated?language=${language}&page=1`;
-    const jsonRes = await moviesFetch(url);
-    const movies: Movie[] = jsonRes.results as Movie[];
+    const jsonRes = await moviesFetch(url, 'Top rated error');
+    const movies: Movie[] = jsonRes ? jsonRes.results as Movie[] : [];
     return movies.slice(0, length);
   };
 
   const getMovieInfo = async (id: number) => {
     const url = `${apiDetailUrl}${id}?language=${language}`;
-    const jsonRes = await moviesFetch(url);
-    return jsonRes as Movie;
+    const jsonRes = await moviesFetch(url, 'Movie info error');
+    return jsonRes as Movie ?? [];
   };
 
   return {
