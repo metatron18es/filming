@@ -1,10 +1,16 @@
 # filming
+## Prerequisites
 
-This template should help get you started developing with Vue 3 in Vite.
+### Node.js
 
-## Recommended IDE Setup
+Before you can start working, you need to have Node.js
+installed on your machine. The currently supported versions are `18.9.0` or greater.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+_NOTE: You can use a tool like [`NVM`](https://github.com/creationix/nvm)
+ to install and manage multiple node versions_
+ ## Recommended IDE Setup
+
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
 ## Type Support for `.vue` Imports in TS
 
@@ -23,32 +29,41 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
-```sh
-npm install
+Once you have Node.js and `npm` installed on your machine and have validated
+that you are running the proper version, you can set up the development environment
+by running the following at the root of the repository:
+
+```bash
+$ rm package-lock.json
+$ npm i
 ```
 
 ### Compile and Hot-Reload for Development
 
-```sh
-npm run dev
+```bash
+$ npm run dev
 ```
 
 ### Type-Check, Compile and Minify for Production
 
-```sh
-npm run build
+```bash
+$ npm run build
 ```
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
-```sh
-npm run test:unit
+```bash
+$ npm run test:unit
+```
+You can launch unit test with a visual interface
+```bash
+$ npm run test:ui
 ```
 
 ### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
 
-```sh
-npm run test:e2e:dev
+```bash
+$ npm run test:e2e:dev
 ```
 
 This runs the end-to-end tests against the Vite development server.
@@ -56,13 +71,18 @@ It is much faster than the production build.
 
 But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
 
-```sh
-npm run build
-npm run test:e2e
+```bash
+$ npm run build
+$ npm run test:e2e
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
 
-```sh
-npm run lint
+```bash
+$ npm run lint
+```
+### Type check
+
+```bash
+$ npm run type-check
 ```
