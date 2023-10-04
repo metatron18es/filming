@@ -26,9 +26,9 @@ onMounted(() => {
 
 <template>
   <section class="search">
-    <label class="search-label" for="search">Busqueda</label>
-    <input class="search-input" type="text" id="search" placeholder="Buscar..." v-model="search">
-    <button class="search-button" type="button" @click="getSearch">
+    <label class="search-label" for="search" data-testid="search-label">Busqueda</label>
+    <input class="search-input" type="text" id="search" placeholder="Buscar..." v-model="search" data-testid="search-input">
+    <button class="search-button" type="button" @click="getSearch" data-testid="search-button">
       Buscar
     </button>
   </section>

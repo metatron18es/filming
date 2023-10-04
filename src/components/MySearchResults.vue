@@ -10,7 +10,7 @@ const props = defineProps<{
 
 <template>
   <section class="common-section">
-    <h2 class="section-title" data-testid="movie-title">{{ props.title }}</h2>
+    <h2 class="section-title" data-testid="movie-search-title">{{ props.title }}</h2>
     <ul class="common-list" v-if="props.movies.length > 0">
       <li
         v-for="movie in props.movies"
@@ -30,7 +30,7 @@ const props = defineProps<{
         </figure>
       </li>
     </ul>
-    <article v-else class="empty-search">
+    <article v-else class="empty-search" data-testid="empty-search">
       <p class="empty-search-title">La busqueda no ha dado ningún resultado</p>
     </article>
   </section>

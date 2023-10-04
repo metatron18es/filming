@@ -19,7 +19,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <h2 class="movie-title">{{ movie.title }}</h2>
+  <h2 class="movie-title" data-testid="movie-title">{{ movie.title }}</h2>
   <section class="movie-info">
     <img :src="useUtils().parseImgUrl(movie.poster_path)" :alt="movie.title" class="movie-img">
     <ul class="movie-data-list">

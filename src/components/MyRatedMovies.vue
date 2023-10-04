@@ -27,7 +27,7 @@ watch(
 
 <template>
   <MySearchResults
-    :title="'Las películas más populares de hoy'"
+    title="Las películas más populares de hoy"
     :movies="movies"
   />
 </template>

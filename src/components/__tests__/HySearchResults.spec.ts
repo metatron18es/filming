@@ -47,7 +47,7 @@ describe('HySearchResults', () => {
         stubs,
       }
     });
-    expect(wrapper.find('[data-testid="movie-title"]').text()).toContain(props.title);
+    expect(wrapper.find('[data-testid="movie-search-title"]').text()).toContain(props.title);
   });
   
   it('should show as movies as array has length', () => {
