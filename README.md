@@ -35,6 +35,7 @@ by running the following at the root of the repository:
 
 ```bash
 $ rm package-lock.json
+$ rm -rf node_modules
 $ npm i
 ```
 
