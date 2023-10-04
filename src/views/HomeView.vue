@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
+import MySearch from '@/components/MySearch.vue';
+import MyRatedMovies from '@/components/MyRatedMovies.vue';
 
+</script>
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <MySearch />
+  <MyRatedMovies />
 </template>

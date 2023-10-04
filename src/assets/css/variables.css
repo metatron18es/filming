@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,500;1,300&display=swap');
+
+:root {
+  color-scheme: dark;
+
+  --dark-navy: #353749;
+
+  --green: #46C9A1;
+  --light-green: #B5E9D9;
+  --dark-green: #2C9776;
+
+  --red: #E75463;
+  --red-rgb: 231, 84, 99;
+  --dark-red: #D11D30;
+  --dark-red-rgb: 209, 29, 48;
+  --darkest-red: #973940;
+
+  --orange: #EDA156;
+  --orange-rgb: 237, 161, 86;
+  --dark-orange: #DF7B18;
+  --darkest-orange: #A4723C;
+
+
+  --pale-blue: #EFF5FA;
+  --blue: #69A6E2;
+  --blue-rgb: 105, 166, 227;
+  --dark-blue: #2573C0;
+  --darkest-blue: #23598F;
+
+  --pink:#E6A6BC;
+
+  --yellow: #FFD352;
+  --yellow-green: #C2D456;
+  --yellow-green-rgb: 194, 212, 86;
+
+  --backdrop: rgba(25, 26, 36, 0.95);
+
+  --radius: 0.4rem;
+
+  --font: 'Jost';
+  --color-font: white;
+  --font-size-base: 16px;
+  --font-regular: 300;
+  --font-semibold: 600;
+}
